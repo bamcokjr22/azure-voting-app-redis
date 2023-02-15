@@ -1,8 +1,13 @@
 name: build_deploy_aks
+# on:
+#   push:
+#     paths:
+#       - "azure-voting-app-redis/**"
 on:
   push:
-    paths:
-      - "azure-voting-app-redis/**"
+    branches: [master]
+  pull_request:
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
